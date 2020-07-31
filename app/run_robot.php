@@ -36,26 +36,28 @@ while(true){
         } else {
             echo "Invalid command.\n";
         }
-    } else {
-        switch($command){
-            case 'move':
-                $robot->move();
-            break;
-            case 'left':
-                $robot->rotate_left();
-            break;
-            case 'right':
-                $robot->rotate_right();
-            break;
-            case 'report':
-                echo $robot->get_current_position()."\n";
-            break;
-            case 'quit':
-            case '0':
-                exit(0);
-            break;
-            default:
-                echo "Invalid command\n";
+    } else if($command === 'quit' || $command == '0') {
+        exit(0);
+    } else{
+        if($robot->is_robot_placed()){
+            switch($command){
+                case 'move':
+                    $robot->move();
+                break;
+                case 'left':
+                    $robot->rotate_left();
+                break;
+                case 'right':
+                    $robot->rotate_right();
+                break;
+                case 'report':
+                    echo $robot->get_current_position()."\n";
+                break;
+                default:
+                    echo "Invalid command\n";
+            }
+        } else {
+            echo "You need to place the robot first.\n";
         }
     }
 
