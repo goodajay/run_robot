@@ -2,6 +2,10 @@
 use \PHPUnit\Framework\TestCase;
 use App\classes\Robot;
 
+/**
+* Robot Test class definition
+*/
+
 class RobotTest extends TestCase
 {
     public function testPlaceCommand()
