@@ -28,3 +28,6 @@ Steps to execute the program:
 
 5. The program will ask the user to input the command from one of the above instructed commands. It will behave only based on the above commands, if invalid command is given then it will show the following error message
   	Invalid Command
+
+6. To run the PHP Unit test for the Robot Class, run the following command from the project root directory
+	vendor/bin/phpunit
