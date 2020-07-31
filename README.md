@@ -8,6 +8,8 @@ Steps to execute the program:
 1. Install the code using the following repo
   https://github.com/goodajay/run_robot.git
 
+  checkout to develop branch to run the program
+
 2. Install the composer, if not already and then run the following command to install the dependencies
   	composer install
 
