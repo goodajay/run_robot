@@ -14,20 +14,21 @@ class Robot {
     const MIN_STEP_X = 0;
     const MIN_STEP_Y = 0;
     
-    public function __construct($position_x = 0, $position_y = 0, $direction = 'north')
+    public function __construct()
     {
-        $this->position_x = $position_x;
-        $this->position_y = $position_y;
-        if(in_array(strtolower($direction), $this->directions)){
-            $this->direction = $direction;
-        } else {
-            $this->direction = self::DEFAULT_DIR;
-        }
+        $this->position_y = null;
+        $this->position_x = null;
+        $this->direction = null;
+    }
+
+    public function is_robot_placed()
+    {
+        return $this->validate_position($this->position_x, $this->position_y, $this->direction);
     }
 
     public function validate_position($pos_x, $pos_y, $dir)
     {
-        if($pos_y && $pos_x && $dir){
+        if(!is_null($pos_y) && !is_null($pos_x) && !is_null($dir)){
            $pos_x = (int)$pos_x; 
            $pos_y = (int)$pos_y; 
 
